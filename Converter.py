@@ -2,7 +2,7 @@ import requests
 import json
 
 def convert_currency(amount, from_currency, to_currency):
-    api_key = "81b3b6afaff462547ea2c983" # Get your own API key from a currency exchange service provider
+    api_key = "81b3b6afaff462547ea2c983" # My API key 
     url = f"https://v6.exchangerate-api.com/v6/{api_key}/pair/{from_currency}/{to_currency}/{amount}"
     response = requests.get(url)
     data = json.loads(response.text)
