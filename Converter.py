@@ -10,7 +10,7 @@ def convert_currency(amount, from_currency, to_currency):
         return f"Error: {data['error-type']}"
     else:
         converted_amount = data["conversion_result"]
-        return f"{amount} {from_currency} is equal to {converted_amount} {to_currency}"
+        return f"{amount} {from_currency} is equal to {converted_amount} {to_currency}"     # Atgriež konvertēto valūtu
 
 amount = float(input("Enter the amount to convert: "))
 from_currency = input("Enter the currency to convert from: ")
