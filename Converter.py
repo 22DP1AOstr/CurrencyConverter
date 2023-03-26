@@ -30,6 +30,14 @@ def index():
         return render_template("Converter.html")
     
 
+# api_key = 'your_api_key_here'
+# from_currency = 'USD'
+# to_currency = 'EUR'
+# amount = 100
+
+# result = convert_currency(api_key, from_currency, to_currency, amount)
+# print(result)
+
 if __name__ == "__main__":
     app.run(debug=True)
     
