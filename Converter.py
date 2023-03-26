@@ -1,33 +1,35 @@
-from flask import Flask, render_templates
+from flask import Flask, render_template, request, redirect, url_for
 import requests
 import json
 
 app = Flask(__name__)
 
-@app.route("/", methods = ["POST", "GET"])
+def convert_currency(amount, from_currency, to_currency):
+    api_key = "81b3b6afaff462547ea2c983" # My API key 
+    url = f"https://v6.exchangerate-api.com/v6/{api_key}/pair/{from_currency}/{to_currency}/{amount}"
+    response = requests.get(url)
+    data = json.loads(response.text)
+    if data["result"] == "error":
+        return f"Error: {data['error-type']}"
+    else:
+        converted_amount = data["conversion_result"]
+        return f"{amount} {from_currency} is equal to {converted_amount} {to_currency}"
+    
+
+@app.route("/", methods=["POST", "GET"])
 def index():
-
-    if requests.method == "POST":
-        def convert_currency(amount, from_currency, to_currency):
-            api_key = "81b3b6afaff462547ea2c983" # My API key 
-            url = f"https://v6.exchangerate-api.com/v6/{api_key}/pair/{from_currency}/{to_currency}/{amount}"
-            response = requests.get(url)
-            data = json.loads(response.text)
-            if data["result"] == "error":
-                return f"Error: {data['error-type']}"
-            else:
-                converted_amount = data["conversion_result"]
-                return f"{amount} {from_currency} is equal to {converted_amount} {to_currency}"     # Atgriež konvertēto valūtu
-
-        amount = float(input("Enter the amount to convert: "))
-        from_currency = input("Enter the currency to convert from: ")
-        to_currency = input("Enter the currency to convert to: ")
+    result = None
+    if request.method == "POST":
+        amount = float(request.form["amount"])
+        from_currency = request.form["from_currency"]
+        to_currency = request.form["to_currency"]
 
         result = convert_currency(amount, from_currency, to_currency)
-        print(result)
+        return render_template("Converter.html", result=result)
+    else:
+        return render_template("Converter.html")
     
-    else: 
-        return render_templates("Converter.html")
 
 if __name__ == "__main__":
     app.run(debug=True)
+    
