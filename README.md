@@ -1,2 +1,3 @@
 # CurrencyConverter
-This is project "WEB page currency converter"  
+Project "Web page Currency Converter"
+
