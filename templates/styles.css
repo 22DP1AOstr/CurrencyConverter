@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+#currency-header {
+    padding-top: 100px;
+}
+
+body {
+    background-color: antiquewhite;
+    text-align: center;
+
+    font-size: 16px;
+    font-weight: normal;
+    font-family: 'Roboto', sans-serif;
+}
+
+.amount {
+    width: 100px;
+    padding-right: 0px;
+}
+
+.converter-fields {
+    padding-top: 100px;
+}
+
+#amount {
+    width: 200px;
+    height: 50px;
+    border-radius: 7px;
+    position: relative;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.from-field {
+    border-radius: 20px;
+}
+
+/* .from-button {
+
+} */
+
+.convert-button {
+    padding-top: 0px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
