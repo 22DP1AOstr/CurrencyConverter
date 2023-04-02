@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
     <title>Currency Converter</title>
 </head>
 <body>
@@ -32,9 +32,7 @@
                 <div class="to-field">
                     <label for="to-currency" class="converter-currency-heading">To Currency </label>
                     <div class="result">
-                        {% if result %}
-                        <p>Converted amount: <output name="result"> {{ result }} </output></p>
-                        {% endif %}
+                        
                     </div>
                     <select name="to-currency" required>
                         <option value="EUR">EUR - Euro</option>
@@ -50,6 +48,9 @@
             </div>
         </form>
     </div>
+    {% if result %}
+    <p>{{ result }}</p>
+    {% endif %}
 
 </body>
 </html>
