@@ -7,15 +7,14 @@
     <title>Currency Converter</title>
 </head>
 <body>
-    <div class="whole currency converter">
-        <h1 id="currency-header">Currency Converter</h1>
+    <div class="whole-currency-converter">
+        <h2 id="currency-header">CURRENCY CONVERTER</h2>
+        <img src="{{ url_for('static', filename='css/converter.jpg') }}" id="image">
         <form action="/" method="post">
-            <div class="converter-fields">
-                <div class="from-field">
-                    <label for="amount" class="amount">Amount</label>
-                    <br>
-                    <input type="text" inputmode="decimal" id="amount" placeholder class="amount-field" value="100" required>
-                    <span></span>
+            <div class="form">
+                <label for="amount" class="amount-header">Amount: </label>
+                <input type="number" inputmode="decimal" id="amount" name="amount" value="100" placeholder="Enter Amount" required>
+                <div class="currency-select">
                     <select name="from_currency" required>
                         <option value="USD">USD - US Dollar</option>
                         <option value="EUR">EUR - Euro</option>
@@ -25,32 +24,25 @@
                         <option value="KZT">KZT</option>
                         <option value="AUD">AUD</option>
                     </select>
-                    <!-- <div class="from-button">
-                       <button role="combobox" type="button" ></button>
-                    </div>  -->
-                </div>
-                <div class="to-field">
-                    <label for="to-currency" class="converter-currency-heading">To Currency </label>
-                    <div class="result">
-                        
-                    </div>
-                    <select name="to-currency" required>
+                    <select name="to_currency" required>
                         <option value="EUR">EUR - Euro</option>
                         <option value="USD">USD - US Dollar</option>
                         <option value="GBP">GBP</option>
                         <option value="RUB">RUB</option>
                         <option value="JPY">JPY</option>
                         <option value="KZT">KZT</option>
-                        <option value="AUD">AUD</option>
+                        <option value="AUD">AUD</option>                
                     </select>
                 </div>
-                <input type="submit" value="Convert" class="convert-button">
+            <div>
+                <button id="convert-button">Convert</button>
+            </div>
+            </div>
+            <div class="result">
+                <output name="result" for="amount"> {{ result }} </output>
             </div>
         </form>
     </div>
-    {% if result %}
-    <p>{{ result }}</p>
-    {% endif %}
 
 </body>
 </html>
