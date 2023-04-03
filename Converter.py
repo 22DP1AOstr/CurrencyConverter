@@ -13,10 +13,10 @@ def convert_currency(amount, from_currency, to_currency):
         return f"Error: {data['error-type']}"
     else:
         converted_amount = data["conversion_result"]
-        return f"{amount} {from_currency} is equal to {converted_amount} {to_currency}"
+        return f"{amount} {from_currency} = {converted_amount} {to_currency}"
     
 
-@app.route("/", methods=["POST", "GET"])
+@app.route("/", methods=['GET', 'POST'])
 def index():
     result = None
     if request.method == "POST":
