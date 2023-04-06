@@ -9,6 +9,8 @@ body {
 }
 
 .whole-currency-converter {
+    align-items: center;
+    justify-content: center;
     width: 100%;
     max-width: 360px;
     background-color: rgb(255, 255, 255);
@@ -42,24 +44,46 @@ label {
     outline: none;
     font-size: 16px;
     border-bottom: 2px solid black;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
     padding: 8px;
 }
 
-.currency-select {
+.drop-list {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 15px;
+    gap: 30px;
+}
+
+.select-box {
+    display: flex;
+    height: 50px;
+    width: 140px;
+    align-items: center;
+    border: 1px solid #999;
+    border-radius: 5px;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+}
+
+#image-rows {
+    cursor: pointer;
+    margin-top: 55px;
+    width: 30px;
+}
+
+.select-box img {
+    max-width: 25px;
 }
 
 select {
-    width: 100%;
-    padding: 11px;
+    width: auto;
     font-size: 16px;
-    border-radius: 4px;
-    background-position: right 15px top 15px, center;
-    background-color: rgb(115, 236, 255);
+    background-color: rgb(255, 255, 255);
     color: black;
     outline: none;
     border: none;
@@ -70,17 +94,18 @@ select {
     width: 100%;
     height: 50px;
     display: block;
-    margin-top: 30px;
+    margin-top: 40px;
     border-radius: 5px;
-    background-color: rgb(115, 236, 255);
+    background-color: rgb(125, 228, 244);
     border: none;
+    outline: none;
 }
 
 .result {
     margin-top: 30px;
     font-size: 18px;
     text-align: center;
-    padding: 12px;
-    background-color: rgb(157, 241, 254);
+    padding: 0px;
+    background-color: rgb(255, 255, 255);
     border-radius: 4px;
 }
