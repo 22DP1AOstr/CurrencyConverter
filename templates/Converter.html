@@ -11,28 +11,41 @@
         <h2 id="currency-header">CURRENCY CONVERTER</h2>
         <img src="{{ url_for('static', filename='css/converter.jpg') }}" id="image">
         <form action="/" method="post">
-            <div class="form">
+            <div class="form"> 
                 <label for="amount" class="amount-header">Amount: </label>
                 <input type="number" inputmode="decimal" id="amount" name="amount" value="100" placeholder="Enter Amount" required>
-                <div class="currency-select">
-                    <select name="from_currency" required>
-                        <option value="USD">USD - US Dollar</option>
-                        <option value="EUR">EUR - Euro</option>
-                        <option value="GBP">GBP</option>
-                        <option value="RUB">RUB</option>
-                        <option value="JPY">JPY</option>
-                        <option value="KZT">KZT</option>
-                        <option value="AUD">AUD</option>
-                    </select>
-                    <select name="to_currency" required>
-                        <option value="EUR">EUR - Euro</option>
-                        <option value="USD">USD - US Dollar</option>
-                        <option value="GBP">GBP</option>
-                        <option value="RUB">RUB</option>
-                        <option value="JPY">JPY</option>
-                        <option value="KZT">KZT</option>
-                        <option value="AUD">AUD</option>                
-                    </select>
+                <div class="drop-list">
+                    <div class="from-field">
+                        <p>From </p>
+                        <div class="select-box">
+                            <!-- <img src="https://flagsapi.com/US/flat/64.png" alt="flag"> -->
+                            <select name="from_currency" required>
+                                <option value="USD">USD - US Dollar</option>
+                                <option value="EUR">EUR</option>
+                                <option value="GBP">GBP</option>
+                                <option value="RUB">RUB</option>
+                                <option value="JPY">JPY</option>
+                                <option value="KZT">KZT</option>
+                                <option value="AUD">AUD</option>
+                            </select>
+                        </div>
+                    </div>
+                    <img src="{{ url_for('static', filename='css/rows.png') }}" id="image-rows">
+                    <div class="to-field">
+                        <p>To </p>
+                        <div class="select-box">
+                            <!-- <img src="https://flagsapi.com/US/flat/64.png" alt="flag"> -->
+                            <select name="to_currency" required>
+                                <option value="EUR">EUR - Euro</option>
+                                <option value="USD">USD</option>
+                                <option value="GBP">GBP</option>
+                                <option value="RUB">RUB</option>
+                                <option value="JPY">JPY</option>
+                                <option value="KZT">KZT</option>
+                                <option value="AUD">AUD</option>                
+                            </select>
+                        </div>
+                    </div>
                 </div>
             <div>
                 <button id="convert-button">Convert</button>
