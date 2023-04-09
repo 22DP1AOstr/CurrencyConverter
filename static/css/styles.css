@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 body {
-    background-color: rgb(125, 228, 244);
+    background-color: rgb(204, 204, 204);
     text-align: center;
     font-size: 16px;
     font-weight: normal;
@@ -9,14 +9,14 @@ body {
 }
 
 .whole-currency-converter {
-    align-items: center;
-    justify-content: center;
+    /* align-items: center;
+    justify-content: center; */
     width: 100%;
     max-width: 360px;
     background-color: rgb(255, 255, 255);
     position: absolute;
     transform: translate(-50%, -50%);
-    left: 50%;
+    right: 53%;
     top: 50%;
     padding: 30px;
     border-radius: 15px;
@@ -52,22 +52,24 @@ label {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
+    gap: 10px;
 }
 
 .select-box {
     display: flex;
     height: 50px;
-    width: 140px;
+    width: 120px;
     align-items: center;
     border: 1px solid #999;
     border-radius: 5px;
 }
 
-p {
+.from-to {
     font-size: 16px;
     font-weight: 600;
     display: flex;
+    margin-top: 25px;
+    margin-bottom: 0px;
 }
 
 #image-rows {
@@ -81,7 +83,7 @@ p {
 }
 
 select {
-    width: auto;
+    width: 100%;
     font-size: 16px;
     background-color: rgb(255, 255, 255);
     color: black;
@@ -89,12 +91,18 @@ select {
     border: none;
 }
 
+#eur-1usd {
+    display: flex;
+    font-size: 18px;
+    font-weight: 400px;
+}
+
 #convert-button {
     font-size: 16px;
     width: 100%;
     height: 50px;
     display: block;
-    margin-top: 40px;
+    margin-top: 30px;
     border-radius: 5px;
     background-color: rgb(125, 228, 244);
     border: none;
@@ -102,10 +110,78 @@ select {
 }
 
 .result {
-    margin-top: 30px;
+    margin-top: 10px;
     font-size: 18px;
     text-align: center;
     padding: 0px;
     background-color: rgb(255, 255, 255);
     border-radius: 4px;
+}
+
+
+
+/* --------------- */
+
+
+
+#conversion-header {
+    display: flex;
+    font-size: 22px;
+}
+
+.whole-field-table {
+    display: block;
+    width: auto;
+    width: 800px;
+    position: absolute;
+    transform: translate(10%, -50%);
+    left: 47%;
+    top: 48%;
+}
+
+table {
+    width: 100%;
+}
+
+thead th {
+    background: rgb(125, 228, 244);
+    border: none;
+    text-align:center;
+    padding: 8px;
+}
+
+td {
+    vertical-align: center;
+    /* border-top: 1px solid #dee2e6; */
+}
+
+.two-tables {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.table-first {
+    width: 100%;
+
+}
+
+.table-second {
+    width: 100%;
+}
+
+tbody tr td {
+    padding: 16px;
+}
+
+tbody tr td:first-of-type {
+    padding-right: 23px;
+    text-align: right;
+    background: #eee;
+}
+
+tbody tr td:last-of-type {
+    padding-left: 23px;
+    text-align: left;
+    background: #f9f9f9;
 }
