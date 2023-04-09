@@ -16,11 +16,11 @@
                 <input type="number" inputmode="decimal" id="amount" name="amount" value="100" placeholder="Enter Amount" required>
                 <div class="drop-list">
                     <div class="from-field">
-                        <p>From </p>
+                        <p class="from-to">From </p>
                         <div class="select-box">
                             <!-- <img src="https://flagsapi.com/US/flat/64.png" alt="flag"> -->
                             <select name="from_currency" required>
-                                <option value="USD">USD - US Dollar</option>
+                                <option value="USD">USD</option>
                                 <option value="EUR">EUR</option>
                                 <option value="GBP">GBP</option>
                                 <option value="RUB">RUB</option>
@@ -32,11 +32,11 @@
                     </div>
                     <img src="{{ url_for('static', filename='css/rows.png') }}" id="image-rows">
                     <div class="to-field">
-                        <p>To </p>
+                        <p class="from-to">To </p>
                         <div class="select-box">
                             <!-- <img src="https://flagsapi.com/US/flat/64.png" alt="flag"> -->
                             <select name="to_currency" required>
-                                <option value="EUR">EUR - Euro</option>
+                                <option value="EUR">EUR</option>
                                 <option value="USD">USD</option>
                                 <option value="GBP">GBP</option>
                                 <option value="RUB">RUB</option>
@@ -47,6 +47,7 @@
                         </div>
                     </div>
                 </div>
+                <p id="eur-1usd">1 EUR = 1.10 USD</p>
             <div>
                 <button id="convert-button">Convert</button>
             </div>
@@ -55,6 +56,106 @@
                 <output name="result" for="amount"> {{ result }} </output>
             </div>
         </form>
+    </div>
+
+    <div class="whole-field-table">
+        <p id="conversion-header">Quick Conversion Guide</p>
+        <div class="two-tables">
+            <div class="table-first">
+                <table class="table-convert-first">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Euros(EUR) to Dollars(USD)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td width="50%">€ 1 Euro</td>
+                            <td width="50%">$ 1 Dollars</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">€ 2 Euro</td>
+                            <td width="50%">$ 2.20 Dollars</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">€ 5 Euro</td>
+                            <td width="50%">$ 5.50 Dollars</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">€ 10 Euro</td>
+                            <td width="50%">$ 10.99 Dollars</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">€ 25 Euro</td>
+                            <td width="50%">$ 27.49 Dollars</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">€ 50 Euro</td>
+                            <td width="50%">$ 54.97 Dollars</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">€ 100 Euro</td>
+                            <td width="50%">$ 109.94 Dollars</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">€ 250 Euro</td>
+                            <td width="50%">$ 274.86 Dollars</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">€ 500 Euro</td>
+                            <td width="50%">$ 549.72 Dollars</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-second">
+                <table class="table-convert-second">
+                    <thead>
+                        <tr>
+                            <th colspan="2">Dollars(USD) to Euros(EUR)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td width="50%">$ 1 Dollar</td>
+                            <td width="50%">€ 1 Euros</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">$ 2 Dollar</td>
+                            <td width="50%">€ 1.82 Euros</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">$ 5 Dollar</td>
+                            <td width="50%">€ 4.55 Euros</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">$ 10 Dollar</td>
+                            <td width="50%">€ 9.10 Euros</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">$ 25 Dollar</td>
+                            <td width="50%">€ 22.74 Euros</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">$ 50 Dollar</td>
+                            <td width="50%">€ 45.48 Euros</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">$ 100 Dollar</td>
+                            <td width="50%">€ 90.95 Euros</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">$ 250 Dollar</td>
+                            <td width="50%">€ 227.39 Euros</td>
+                        </tr>
+                        <tr>
+                            <td width="50%">$ 500 Dollar</td>
+                            <td width="50%">€ 454.77 Euros</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </div>
 
 </body>
