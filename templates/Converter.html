@@ -7,12 +7,18 @@
     <title>Currency Converter</title>
 </head>
 <body>
+    <nav>
+        <label for="logo" id="logo-title">CurrencyX</label>
+        <ul>
+            <li><a href="#">Home</a></li>
+        </ul>
+    </nav>
     <div class="whole-currency-converter">
         <h2 id="currency-header">CURRENCY CONVERTER</h2>
         <img src="{{ url_for('static', filename='css/converter.jpg') }}" id="image">
         <form action="/" method="post">
             <div class="form"> 
-                <label for="amount" class="amount-header">Amount: </label>
+                <label for="amount" class="amount-header" >Amount: </label>
                 <input type="number" inputmode="decimal" id="amount" name="amount" value="100" placeholder="Enter Amount" required>
                 <div class="drop-list">
                     <div class="from-field">
