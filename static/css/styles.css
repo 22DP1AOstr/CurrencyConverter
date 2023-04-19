@@ -6,6 +6,24 @@ body {
     font-size: 16px;
     font-weight: normal;
     font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background: rgb(57, 217, 241);
+    height: 80px;
+    width: 100%;
+}
+
+#logo-title {
+    display: flex;
+    color: black;
+    font-size: 36px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+    margin-left: 170px;
 }
 
 .whole-currency-converter {
@@ -29,9 +47,10 @@ body {
 .amount-header {
     width: 0px;
     display: block;
+    font-weight: 600px;
 }
 
-label {
+label.amount {
     display: block;
     font-weight: 600;
 }
