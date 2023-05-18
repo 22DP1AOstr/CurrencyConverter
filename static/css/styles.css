@@ -1,11 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
+* {
+    text-decoration: none;
+}
+
 body {
-    background-color: rgb(204, 204, 204);
+    background-color: rgb(234, 234, 234);
     text-align: center;
     font-size: 16px;
     font-weight: normal;
     font-family: 'Poppins', sans-serif;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     padding: 0;
 }
@@ -17,18 +23,44 @@ nav {
 }
 
 #logo-title {
-    display: flex;
     color: black;
     font-size: 36px;
     line-height: 80px;
-    padding: 0 100px;
+    padding: 0 0px;
     font-weight: bold;
-    margin-left: 170px;
+    margin-right: 560px;
+}
+
+nav ul {
+    float: right;
+    margin-right: 20px;
+    list-style: none;
+    margin-right: 500px;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+nav ul li {
+    display: inline-block;
+    line-height: 50px;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 7px 13px;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+a.active,a:hover {
+    background: rgb(18, 243, 254);
+    transition: .5s
 }
 
 .whole-currency-converter {
-    /* align-items: center;
-    justify-content: center; */
     width: 100%;
     max-width: 360px;
     background-color: rgb(255, 255, 255);
@@ -74,15 +106,6 @@ label.amount {
     gap: 10px;
 }
 
-.select-box {
-    display: flex;
-    height: 50px;
-    width: 120px;
-    align-items: center;
-    border: 1px solid #999;
-    border-radius: 5px;
-}
-
 .from-to {
     font-size: 16px;
     font-weight: 600;
@@ -101,13 +124,96 @@ label.amount {
     max-width: 25px;
 }
 
-select {
-    width: 100%;
+.custom-select {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    color: #888;
+    margin-top: 0px;
+}
+
+.custom-select select {
+    display: block;
     font-size: 16px;
-    background-color: rgb(255, 255, 255);
-    color: black;
+    width: 100%;
+    width: 125px;
+    height: 50px;
+    background: rgb(125, 228, 244);
+    border-radius: 5px;
+    border: 2px solid #1a75bf;
     outline: none;
-    border: none;
+    padding: 0 20px 0 10px;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+
+.custom-select .selector-options {
+    display: block;
+    height: 300px;
+    overflow-y: auto;
+    list-style: none;
+    padding: 5px 0;
+    margin: 33px 0px 0px 0px ;
+    background: #11436b;
+    color: white;
+    border: 1px solid #2196F3;
+    border-radius: 5px;
+    z-index: 1;
+    /* width: 100%; */
+    max-width: 300px;
+    position: absolute;
+    left: 2%;
+    top: 35%;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.select-box {
+    position: relative;
+    display: flex;
+    height: 50px;
+    width: 120px;
+    align-items: center;
+    /* border: 1px solid #999;
+    border-radius: 5px; */
+}
+
+
+.select-box::after {
+    content: '\25BC';
+    position: absolute;
+    top: 5%;
+    right: 25%;
+    transform: translate(95%, 0);
+    padding: 10px 9px;
+    background: rgb(125, 228, 244);
+    border-radius: 5px;
+    cursor:pointer;
+    pointer-events:none;
+    transition:.25s all ease;
+}
+
+.select-box:hover::after {
+    color: rgb(125, 228, 244);
+}
+
+.custom-select .selector-options li {
+    width: 150px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+  
+.custom-select .selector-options li:hover {
+    background: #03A9F4;
 }
 
 #eur-1usd {
@@ -126,6 +232,7 @@ select {
     background-color: rgb(125, 228, 244);
     border: none;
     outline: none;
+    cursor: pointer;
 }
 
 .result {
@@ -196,7 +303,7 @@ tbody tr td {
 tbody tr td:first-of-type {
     padding-right: 23px;
     text-align: right;
-    background: #eee;
+    background: #d3d3d3;
 }
 
 tbody tr td:last-of-type {
