@@ -31,9 +31,12 @@ def index():
 
         # Call the convert_currency function to get the conversion result
         result = convert_currency(amount, from_currency, to_currency)
-        return render_template("Converter.html", result=result)
+        return render_template("Converter.html", result=result, from_currency=from_currency, to_currency=to_currency)
     else:
-        return render_template("Converter.html")
+        from_currency = 'USD'  # Set a default value for from_currency
+        to_currency = 'EUR'
+        return render_template("Converter.html", from_currency=from_currency, to_currency=to_currency)
+
     
 # api_key = 'your_api_key_here'
 # from_currency = 'USD'
