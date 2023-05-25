@@ -231,10 +231,10 @@ select::-ms-expand {
 
 .whole-field-table {
     display: block;
-    width: clamp(100%);
+	position: relative;
+    width: 100%;
     width: 800px;
-    position: absolute;
-    transform: translate(120%, -18%);
+    transform: translate(120%, -84%);
     top: 30%;
 }
 
