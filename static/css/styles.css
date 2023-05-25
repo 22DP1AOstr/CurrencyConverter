@@ -2,6 +2,9 @@
 
 * {
     text-decoration: none;
+	margin: 0;
+	padding: 0;
+	#box-sizing: border-box;
 }
 
 body {
@@ -12,62 +15,33 @@ body {
     font-family: 'Poppins', sans-serif;
     justify-content: center;
     align-items: center;
-    margin: 0;
-    padding: 0;
 }
 
 nav {
     background: rgb(57, 217, 241);
     height: 80px;
-    width: 100%;
 }
 
 #logo-title {
+	display: flex;
+	position: absolute;
     color: black;
     font-size: 36px;
     line-height: 80px;
     padding: 0 0px;
     font-weight: bold;
-    margin-right: 560px;
-}
-
-nav ul {
-    float: right;
-    margin-right: 20px;
-    list-style: none;
-    margin-right: 500px;
-    text-decoration: none;
-    box-sizing: border-box;
-}
-
-nav ul li {
-    display: inline-block;
-    line-height: 50px;
-    margin-right: 20px;
-}
-
-nav ul li a {
-    color: black;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 7px 13px;
-    border-radius: 5px;
-    text-transform: uppercase;
-}
-
-a.active,a:hover {
-    background: rgb(18, 243, 254);
-    transition: .5s
+	margin-left: 275px;
 }
 
 .whole-currency-converter {
-    width: 100%;
-    max-width: 360px;
+    width: clamp(100%);
+    max-width: 350px;
+	height: 550px;
     background-color: rgb(255, 255, 255);
-    position: absolute;
-    transform: translate(-50%, -50%);
-    right: 53%;
-    top: 50%;
+    position: sticky;
+    transform: translate(65%, 18%);
+    right: 50%;
+    top: 0%;
     padding: 30px;
     border-radius: 15px;
 }
@@ -257,12 +231,11 @@ select::-ms-expand {
 
 .whole-field-table {
     display: block;
-    width: auto;
+    width: clamp(100%);
     width: 800px;
     position: absolute;
-    transform: translate(10%, -50%);
-    left: 47%;
-    top: 48%;
+    transform: translate(120%, -18%);
+    top: 30%;
 }
 
 table {
